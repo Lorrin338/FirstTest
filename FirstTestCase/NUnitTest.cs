@@ -18,18 +18,20 @@ namespace FirstTestCase
 		public void Initialize()
 		{
 			driver = new FirefoxDriver();
-		}
-
-		[Test]
-		public void OpenAppTest()
-		{
 			driver.Url = "https://www.futbin.com/";
 		}
+
+		//[Test]
+		//public void OpenAppTest()
+		//{
+		//	driver.Url = "https://www.futbin.com/";
+		//}
+
 
 		[Test]
 		public void TitleAndPageDetails()
 		{
-			driver.Url = "https://www.futbin.com/";
+
 			String Title = driver.Title;
 			int TitleLength = driver.Title.Length;
 			Console.WriteLine("Title of the page is: " + Title);
@@ -71,6 +73,8 @@ namespace FirstTestCase
 		public void EndTest()
 		{
 			driver.Close();
+			driver.Quit();
+
 		}
 	}
 }
